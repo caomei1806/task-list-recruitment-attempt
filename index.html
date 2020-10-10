@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Karolina Grochal" />
+    <title>Zadanie rekrutacyjne</title>
+    <link
+      rel="shortcut icon"
+      href="/img/icons/bxs-meteor.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <section id="company-box" class="small-section">
+        <input
+          type="text"
+          class="input"
+          name="company"
+          id="company-input"
+          placeholder="Nazwa firmy"
+          onfocusout="errorMessage('company')"
+          onkeyup="errorMessage('company')"
+        />
+        <small id="e1" class="error-message">Błąd</small>
+        <div id="employee" class="p-relative">
+          <input
+            id="employee-input"
+            type="text"
+            class="input"
+            placeholder="Pracownik"
+            readonly="readonly"
+          />
+          <img
+            src="/img/icons/bx-chevron-down.svg"
+            class="chevron"
+            alt="chevron-down"
+          />
+        </div>
+        <div class="employee-box">
+          <div class="search-box">
+            <input
+              id="search"
+              type="text"
+              class="input"
+              placeholder="Search"
+              autocomplete="off"
+            />
+            <img src="/img/icons/bx-search.svg" alt="search" />
+          </div>
+          <div class="result" id="employees-box"></div>
+        </div>
+      </section>
+      <section class="small-section">
+        <hr />
+      </section>
+      <section id="task-box" class="small-section p-relative">
+        <h5>Zadania</h5>
+        <div class="p-relative">
+          <label for="task-name" id="task-label">Nazwa zadania</label>
+          <input
+            type="text"
+            class="input i-input"
+            name="task-name"
+            id="task-name"
+            onkeyup="errorMessage('task-name')"
+            onfocusout="errorMessage('task-name')"
+          />
+          <small id="e3" class="error-message">Błąd</small>
+        </div>
+        <input
+          type="number"
+          class="input"
+          name="price"
+          id="task-price"
+          placeholder="Kwota w PLN"
+          onkeyup="errorMessage('price')"
+        />
+        <small id="e4" class="error-message">Błąd</small>
+        <div id="add-box">
+          <small>1 euro = 4.8282</small>
+          <button id="task-add">Dodaj</button>
+        </div>
+        <h3 id="e5" class="error-message">Błąd</h3>
+      </section>
+      <section id="table">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <div class="th-inner">
+                  Nazwa zadania
+                  <div class="carets">
+                    <img
+                      src="/img/icons/bx-caret-up.svg"
+                      alt="filter-caret-up"
+                      onclick="sortTaskList('name', true)"
+                    />
+                    <img
+                      src="/img/icons/bx-caret-down.svg"
+                      alt="filter-caret-down"
+                      onclick="sortTaskList('name', false)"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="th-inner">
+                  Kwota w PLN
+                  <div class="carets">
+                    <img
+                      src="/img/icons/bx-caret-up.svg"
+                      alt="filter-caret-up"
+                      onclick="sortTaskList('pricePLN', true)"
+                    />
+                    <img
+                      src="/img/icons/bx-caret-down.svg"
+                      alt="filter-caret-down"
+                      onclick="sortTaskList('pricePLN', false)"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="th-inner">
+                  Kwota w EUR
+                  <div class="carets">
+                    <img
+                      src="/img/icons/bx-caret-up.svg"
+                      alt="filter-caret-up"
+                      onclick="sortTaskList('priceEUR', true)"
+                    />
+                    <img
+                      src="/img/icons/bx-caret-down.svg"
+                      alt="filter-caret-down"
+                      onclick="sortTaskList('priceEUR', false)"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="th-inner">Opcje</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tasks"></tbody>
+        </table>
+        <h4>Suma: <span id="total-price"></span></h4>
+      </section>
+    </main>
+  </body>
+</html>

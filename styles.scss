@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@mixin flex() {
+	display: flex;
+	align-items: center;
+}
+
+$primary: #00447c;
+$grey: #939393;
+$grey2: #4a4a4a;
+$grey-value: #333333;
+$error: #ff4003;
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgb(192, 192, 192);
+	border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: $grey;
+}
+
+.container {
+	width: 80%;
+	margin-left: auto;
+	padding-top: 1rem;
+	font-family: "Source Sans Pro";
+	.small-section {
+		width: 20%;
+		.input {
+			@include flex;
+			width: calc(100% - 20px);
+			padding: 6px 10px;
+			margin-top: 1rem;
+			border-radius: 3px;
+			border: 1px solid #e1e1e1;
+			font-family: "Source Sans Pro";
+			font-size: 14px;
+			font-weight: 400;
+			color: $grey-value;
+			position: relative;
+			&::placeholder {
+				color: $grey;
+			}
+			&:focus {
+				outline: none;
+				border: 1px solid rgb(50, 145, 201);
+				box-shadow: 0 0 3px $primary;
+			}
+			&.error {
+				outline: none;
+				border: 1px solid $error;
+				box-shadow: 0 0 3px rgb(194, 5, 30);
+				position: relative;
+			}
+		}
+	}
+	#company-box {
+		position: relative;
+
+		.employee-box {
+			width: 100%;
+
+			display: none;
+			margin-top: 0.3rem;
+			padding: unset;
+			position: absolute;
+			z-index: 2;
+			border: 1px solid rgb(214, 214, 214);
+			border-radius: 3px;
+
+			.search-box {
+				width: calc(100% + 0.4px);
+				position: relative;
+				border-bottom: 1px solid rgb(214, 214, 214);
+				padding: 6px 0;
+				background-color: white;
+
+				#search {
+					width: 87%;
+					height: 80%;
+					border: none;
+					background-color: rgb(240, 240, 240);
+					margin: auto;
+				}
+				&:hover img {
+					filter: invert(20%);
+				}
+
+				img {
+					width: 20px;
+					position: absolute;
+					right: 10px;
+					top: 12px;
+					filter: invert(70%);
+				}
+			}
+			.result {
+				width: calc(100% + 0.4px);
+				max-height: 11.5rem;
+				overflow-y: auto;
+				overflow-x: hidden;
+				background-color: white;
+				.person {
+					width: 100%;
+					height: 40px;
+					padding: 10px 10px;
+					&:hover {
+						background-color: #f4f7fb;
+						cursor: pointer;
+					}
+					.personal-info {
+						@include flex();
+					}
+					@include flex();
+					justify-content: space-between;
+					.person-name {
+						color: $grey2;
+						margin-left: 10px;
+						font-weight: 400;
+						font-size: 14px;
+						&.active {
+							color: $primary;
+							font-weight: 600;
+						}
+					}
+					.avatar {
+						width: 40px;
+						height: 40px;
+						border-radius: 50%;
+						background-size: cover;
+						background-position: center;
+					}
+					.checked {
+						margin-right: 20px;
+						width: 20px;
+						display: none;
+						&.active {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+
+		#employee {
+			position: relative;
+			.input {
+				cursor: pointer;
+			}
+			&:hover .chevron {
+				filter: invert(20%);
+			}
+			.chevron {
+				position: absolute;
+				right: 10px;
+				top: 4px;
+				filter: invert(70%);
+			}
+		}
+	}
+	hr {
+		height: 1px;
+		border-width: 0;
+		background-color: #a2a2a2;
+		width: 100%;
+		margin-top: 2rem;
+		box-shadow: 0px 0px 1px grey;
+	}
+
+	#task-box {
+		width: 20%;
+		h5,
+		small {
+			margin-left: 10px;
+		}
+		h5 {
+			color: $grey2;
+			font-weight: 400;
+			font-size: 14px;
+		}
+		#task-name {
+			margin-top: 10px;
+		}
+		.error-message {
+			margin-left: 0;
+			font-size: 12px;
+		}
+		label {
+			padding: 0 5px;
+			font-size: 12px;
+			position: absolute;
+			z-index: 1;
+			top: -8px;
+			left: 10px;
+			background-color: white;
+			color: $grey2;
+			transition: 0.2s all;
+
+			&.active {
+				color: $primary;
+			}
+			&.error {
+				color: $error;
+			}
+		}
+		#add-box {
+			margin-top: 20px;
+			width: 100%;
+			@include flex();
+			small {
+				color: $grey2;
+			}
+			justify-content: space-between;
+			button {
+				font-family: "Source Sans Pro";
+				padding: 7px 25px;
+				border: none;
+				border-radius: 3px;
+				background-color: $primary;
+				color: white;
+				&:hover {
+					background-color: darken($primary, 10%);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	#table {
+		width: 60%;
+		margin-top: 3rem;
+		font-size: 14px;
+		table {
+			border: 1px solid #d6e2f5;
+			border-collapse: collapse;
+			color: $grey2;
+
+			td,
+			th {
+				border-top: 1px solid #d6e2f5;
+				padding: 1rem 3rem 1rem 1rem;
+			}
+
+			th {
+				.th-inner {
+					display: flex;
+					align-items: center;
+					font-weight: 600;
+					.carets {
+						margin-left: 10px;
+						display: flex;
+						flex-direction: column;
+						position: relative;
+						img {
+							position: absolute;
+							height: 14px;
+							&:hover {
+								cursor: pointer;
+								filter: invert(50%);
+							}
+							&:nth-child(1) {
+								top: -9px;
+							}
+							&:nth-child(2) {
+								top: -2px;
+							}
+						}
+					}
+				}
+			}
+			td {
+				font-weight: 400;
+				.delete-task {
+					display: flex;
+					align-items: center;
+					&:hover {
+						cursor: pointer;
+					}
+					&:hover img {
+						filter: invert(10%);
+					}
+					&:hover span {
+						color: black;
+					}
+					img {
+						height: 16px;
+						margin-right: 10px;
+						filter: invert(40%);
+					}
+				}
+			}
+		}
+		h4 {
+			margin-left: 1rem;
+			color: $grey2;
+			font-weight: 400;
+			font-size: 18px;
+			span {
+				margin-left: 0.2rem;
+			}
+		}
+	}
+}
+.p-relative {
+	position: relative;
+}
+.shown {
+	display: block !important;
+}
+
+.error-message {
+	display: none;
+	color: $error;
+}
+#employee-input {
+	margin-bottom: 0px;
+}

@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: silver;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #939393;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  padding-top: 1rem;
+  font-family: "Source Sans Pro";
+}
+
+.container .small-section {
+  width: 20%;
+}
+
+.container .small-section .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 20px);
+  padding: 6px 10px;
+  margin-top: 1rem;
+  border-radius: 3px;
+  border: 1px solid #e1e1e1;
+  font-family: "Source Sans Pro";
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  position: relative;
+}
+
+.container .small-section .input::-webkit-input-placeholder {
+  color: #939393;
+}
+
+.container .small-section .input:-ms-input-placeholder {
+  color: #939393;
+}
+
+.container .small-section .input::-ms-input-placeholder {
+  color: #939393;
+}
+
+.container .small-section .input::placeholder {
+  color: #939393;
+}
+
+.container .small-section .input:focus {
+  outline: none;
+  border: 1px solid #3291c9;
+  -webkit-box-shadow: 0 0 3px #00447c;
+          box-shadow: 0 0 3px #00447c;
+}
+
+.container .small-section .input.error {
+  outline: none;
+  border: 1px solid #ff4003;
+  -webkit-box-shadow: 0 0 3px #c2051e;
+          box-shadow: 0 0 3px #c2051e;
+  position: relative;
+}
+
+.container #company-box {
+  position: relative;
+}
+
+.container #company-box .employee-box {
+  width: 100%;
+  display: none;
+  margin-top: 0.3rem;
+  padding: unset;
+  position: absolute;
+  z-index: 2;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+}
+
+.container #company-box .employee-box .search-box {
+  width: calc(100% + 0.4px);
+  position: relative;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 6px 0;
+  background-color: white;
+}
+
+.container #company-box .employee-box .search-box #search {
+  width: 87%;
+  height: 80%;
+  border: none;
+  background-color: #f0f0f0;
+  margin: auto;
+}
+
+.container #company-box .employee-box .search-box:hover img {
+  -webkit-filter: invert(20%);
+          filter: invert(20%);
+}
+
+.container #company-box .employee-box .search-box img {
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  -webkit-filter: invert(70%);
+          filter: invert(70%);
+}
+
+.container #company-box .employee-box .result {
+  width: calc(100% + 0.4px);
+  max-height: 11.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+.container #company-box .employee-box .result .person {
+  width: 100%;
+  height: 40px;
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container #company-box .employee-box .result .person:hover {
+  background-color: #f4f7fb;
+  cursor: pointer;
+}
+
+.container #company-box .employee-box .result .person .personal-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container #company-box .employee-box .result .person .person-name {
+  color: #4a4a4a;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container #company-box .employee-box .result .person .person-name.active {
+  color: #00447c;
+  font-weight: 600;
+}
+
+.container #company-box .employee-box .result .person .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.container #company-box .employee-box .result .person .checked {
+  margin-right: 20px;
+  width: 20px;
+  display: none;
+}
+
+.container #company-box .employee-box .result .person .checked.active {
+  display: block;
+}
+
+.container #company-box #employee {
+  position: relative;
+}
+
+.container #company-box #employee .input {
+  cursor: pointer;
+}
+
+.container #company-box #employee:hover .chevron {
+  -webkit-filter: invert(20%);
+          filter: invert(20%);
+}
+
+.container #company-box #employee .chevron {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  -webkit-filter: invert(70%);
+          filter: invert(70%);
+}
+
+.container hr {
+  height: 1px;
+  border-width: 0;
+  background-color: #a2a2a2;
+  width: 100%;
+  margin-top: 2rem;
+  -webkit-box-shadow: 0px 0px 1px grey;
+          box-shadow: 0px 0px 1px grey;
+}
+
+.container #task-box {
+  width: 20%;
+}
+
+.container #task-box h5,
+.container #task-box small {
+  margin-left: 10px;
+}
+
+.container #task-box h5 {
+  color: #4a4a4a;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container #task-box #task-name {
+  margin-top: 10px;
+}
+
+.container #task-box .error-message {
+  margin-left: 0;
+  font-size: 12px;
+}
+
+.container #task-box label {
+  padding: 0 5px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: 10px;
+  background-color: white;
+  color: #4a4a4a;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.container #task-box label.active {
+  color: #00447c;
+}
+
+.container #task-box label.error {
+  color: #ff4003;
+}
+
+.container #task-box #add-box {
+  margin-top: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container #task-box #add-box small {
+  color: #4a4a4a;
+}
+
+.container #task-box #add-box button {
+  font-family: "Source Sans Pro";
+  padding: 7px 25px;
+  border: none;
+  border-radius: 3px;
+  background-color: #00447c;
+  color: white;
+}
+
+.container #task-box #add-box button:hover {
+  background-color: #002849;
+  cursor: pointer;
+}
+
+.container #table {
+  width: 60%;
+  margin-top: 3rem;
+  font-size: 14px;
+}
+
+.container #table table {
+  border: 1px solid #d6e2f5;
+  border-collapse: collapse;
+  color: #4a4a4a;
+}
+
+.container #table table td,
+.container #table table th {
+  border-top: 1px solid #d6e2f5;
+  padding: 1rem 3rem 1rem 1rem;
+}
+
+.container #table table th .th-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+}
+
+.container #table table th .th-inner .carets {
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.container #table table th .th-inner .carets img {
+  position: absolute;
+  height: 14px;
+}
+
+.container #table table th .th-inner .carets img:hover {
+  cursor: pointer;
+  -webkit-filter: invert(50%);
+          filter: invert(50%);
+}
+
+.container #table table th .th-inner .carets img:nth-child(1) {
+  top: -9px;
+}
+
+.container #table table th .th-inner .carets img:nth-child(2) {
+  top: -2px;
+}
+
+.container #table table td {
+  font-weight: 400;
+}
+
+.container #table table td .delete-task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container #table table td .delete-task:hover {
+  cursor: pointer;
+}
+
+.container #table table td .delete-task:hover img {
+  -webkit-filter: invert(10%);
+          filter: invert(10%);
+}
+
+.container #table table td .delete-task:hover span {
+  color: black;
+}
+
+.container #table table td .delete-task img {
+  height: 16px;
+  margin-right: 10px;
+  -webkit-filter: invert(40%);
+          filter: invert(40%);
+}
+
+.container #table h4 {
+  margin-left: 1rem;
+  color: #4a4a4a;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.container #table h4 span {
+  margin-left: 0.2rem;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.shown {
+  display: block !important;
+}
+
+.error-message {
+  display: none;
+  color: #ff4003;
+}
+
+#employee-input {
+  margin-bottom: 0px;
+}
+/*# sourceMappingURL=styles.css.map */
