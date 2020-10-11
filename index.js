@@ -1,43 +1,43 @@
 const employeesList = [
   {
     name: "Aiesha Simmons",
-    avatar: "/img/business-people/pexels-andrea-piacquadio-774909.jpg",
+    avatar: "./img/business-people/pexels-andrea-piacquadio-774909.jpg",
   },
   {
     name: "Ria Byers",
-    avatar: "/img/business-people/pexels-asa-dugger-1666073.jpg",
+    avatar: "./img/business-people/pexels-asa-dugger-1666073.jpg",
   },
   {
     name: "Coen Hendrix",
-    avatar: "/img/business-people/pexels-creation-hill-1681010.jpg",
+    avatar: "./img/business-people/pexels-creation-hill-1681010.jpg",
   },
   {
     name: "Keanu William",
-    avatar: "/img/business-people/pexels-daria-shevtsova-1548164.jpg",
+    avatar: "./img/business-people/pexels-daria-shevtsova-1548164.jpg",
   },
   {
     name: "Mita Yoshi",
-    avatar: "/img/business-people/pexels-ketut-subiyanto-4349862.jpg",
+    avatar: "./img/business-people/pexels-ketut-subiyanto-4349862.jpg",
   },
   {
     name: "Vinny Mcgowan",
-    avatar: "/img/business-people/pexels-mentatdgt-936229.jpg",
+    avatar: "./img/business-people/pexels-mentatdgt-936229.jpg",
   },
   {
     name: "Gene Holland",
-    avatar: "/img/business-people/pexels-moose-photos-1587009.jpg",
+    avatar: "./img/business-people/pexels-moose-photos-1587009.jpg",
   },
   {
     name: "Roman Chadwick",
-    avatar: "/img/business-people/pexels-pixabay-220453.jpg",
+    avatar: "./img/business-people/pexels-pixabay-220453.jpg",
   },
   {
     name: "Linda Chamberlain",
-    avatar: "/img/business-people/pexels-rfstudio-3867093.jpg",
+    avatar: "./img/business-people/pexels-rfstudio-3867093.jpg",
   },
   {
     name: "Catrin Knapp",
-    avatar: "/img/business-people/pexels-victor-miyata-1845534.jpg",
+    avatar: "./img/business-people/pexels-victor-miyata-1845534.jpg",
   },
 ];
 
@@ -101,7 +101,7 @@ const drawEmployesList = (employees, query = "") => {
                 } ">${employee.name}</span>
               </div>
               <img
-                src="/img/icons/bx-check.svg"
+                src="./img/icons/bx-check.svg"
                 class="checked ${
                   window.checkedIndex === index ? " active" : ""
                 }"
@@ -143,7 +143,7 @@ const drawTasksList = (tasks) => {
             <td>${task.priceEUR.toFixed(0)} EUR</td>
             <td>
               <div class="delete-task" onclick="handleTaskDelete(${index})">
-                <img src="/img/icons/bxs-trash-alt.svg" alt="delete" />
+                <img src="./img/icons/bxs-trash-alt.svg" alt="delete" />
                 <span >Usuń</span>
               </div>
             </td>
